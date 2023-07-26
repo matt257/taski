@@ -4,8 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # Users put tasks through tubes
+  # Users provide workers tasks through tubes
   has_many :tubes
   has_many :tasks, through: :tubes
+  has_many :workers, through: :tubes
+
 end
 
