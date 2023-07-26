@@ -7,6 +7,9 @@ ruby "3.2.2"
 gem 'nokogiri'
 gem 'rack', '~> 2.2.4'
 
+# Solargraph
+gem 'solargraph'
+
 # For authentication 
 gem 'devise'
 
