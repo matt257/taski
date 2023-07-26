@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Users provide workers tasks through tubes
+  
   has_many :tubes
   has_many :tasks, through: :tubes
   has_many :workers, through: :tubes
