@@ -1,4 +1,4 @@
-class QueuesController < ApplicationController
+class TubesController < ApplicationController
     @@queue_max = 10
 
     def index
