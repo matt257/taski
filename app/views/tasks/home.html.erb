@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Awesome Website</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <style>
+    .sidebar-container {
+    position: relative; /* Needed for positioning the button */
+}
+    .sidebar {
+      position: fixed;
+      height: 100%;
+      width: 30px;
+      overflow: hidden;
+      transition: 0.3s;
+      z-index: 1;
+      background-color: #111;
+      color: #fff;
+      padding: 60px 10px 20px;
+    }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .sidebar-toggle {
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: 25px; /* Position the button vertically at the center */
+      right: 5px; /* Position the button to the right of the sidebar container */
+      transform: translateY(-50%); /* Adjust the vertical position to center the button */
+
+
+    }
+    .main-content {
+      transition: 0.3s;
+      padding: 20px;
+      position:
+    }
+  </style>
+</head>
+<body>
+<div id="sidebarContainer" class="sidebar-container">
+  <aside id="sidebar" class="sidebar">
+    <button id="sidebarToggle" class="sidebar-toggle" href="javascript:void(0)" onclick="toggleSidebar()">00</button>
+    <h2>About Us</h2>
+    <p>This is some information about our company.</p>
+  </aside>
+</div>
+
+  <div id="mainContent" class="main-content">
+    <h1>Welcome to My Awesome Website</h1>
+    <p>This is a great place to introduce your website and its purpose.</p>
+  </div>
+
+  <script>
+    let sidebar = document.getElementById("sidebar");
+    let mainContent = document.getElementById("mainContent");
+    sidebar.status = "closed"
+
+
+    function openSidebar() {
+      sidebar.style.width = "250px";
+      mainContent.style.marginLeft = "250px";
+      sidebar.status = "open"
+    }
+
+    function closeSidebar() {
+      sidebar.style.width = "30px";
+      mainContent.style.marginLeft= "30px";
+      sidebar.status = "closed"
+    }
+
+    function toggleSidebar() {
+      if (sidebar.status == "closed") {
+        openSidebar();
+        sidebar.status == "open"
+      } else {
+        closeSidebar();
+        sidebar.status == "closed"
+      }
+    }
+  </script>
+</body>
+</html>
