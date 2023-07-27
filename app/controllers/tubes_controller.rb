@@ -1,5 +1,2 @@
 class TubesController < ApplicationController
-
-
-
 end

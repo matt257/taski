@@ -1,3 +1,4 @@
 class Tube < ApplicationRecord
-    belongs_to :task
+    belongs_to :user
+    has_many :tasks
 end
