@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
-  
   root "tasks#home"
+
+  devise_for :users, controllers: { registrations: 'registrations' }
 end
