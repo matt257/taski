@@ -17,24 +17,11 @@
     <p class="alert"><%= alert %></p>
       <div id="sidebarContainer" class="sidebar-container">
   <aside id="sidebar" class="sidebar">
-    <button id="sidebarToggle" class="sidebar-toggle" href="javascript:void(0)" onclick="toggleSidebar()">00</button>
+    <button id="toggleButton" class="sidebar-toggle" href="javascript:void(0)">00</button>
     <h2>About Us</h2>
     <p>This is some information about our company.</p>
   </aside>
   </div>
-  <div id="mainContent" class="main-content">
-    <h1>Welcome to My Awesome Website</h1>
-    <% if user_signed_in? %>
-      <%= form_for(current_user, url: destroy_user_session_path, method: :delete) do |f| %>
-      <%= f.submit 'Logout' %>
-    <% end %>
-    <% else %>
-      <%= link_to 'Login!', new_user_session_path %>
-      <%= link_to 'Signup!', new_user_registration_path %>
-  <% end %>
-</div>
-  <script>
-  </script>
     <%= yield %>
   </body>
 </html>

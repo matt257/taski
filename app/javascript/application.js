@@ -4,4 +4,9 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "channels"
-import { openSidebar, closeSidebar, toggleSidebar } from "sidebar.js"
+import { toggleSidebar } from './sidebar.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const button = document.getElementById('toggleButton');
+  button.addEventListener('click', toggleSidebar);
+});
