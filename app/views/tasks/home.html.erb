@@ -11,15 +11,11 @@
 </head>
 <body>
 <div id="mainContent" class="main-content">
-    <% if user_signed_in? %>
-      <h1>landing page</h1>
-      <%= form_for(current_user, url: destroy_user_session_path, method: :delete) do |f| %>
-      <%= f.submit 'Logout' %>
-    <% end %>
-    <% else %>
-      <%= link_to 'Login!', new_user_session_path %>
-      <%= link_to 'Signup!', new_user_registration_path %>
-    <% end %>
+
+  <% if !user_signed_in? %>
+    <h1>this is the homepage</h1>
+  <% end %>
+  
 </div>
 </body>
 </html>

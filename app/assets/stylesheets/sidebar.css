@@ -1,37 +1,37 @@
     /*
     *= require sidebar
     */
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 30px; /* This is the width when the sidebar is closed */
+  overflow: hidden;
+  transition: 0.3s;
+  z-index: 1;
+  background-color: #111;
+  color: #fff;
+  padding: 60px 10px 20px;
+}
 
+.sidebar.active {
+  width: 250px; /* This is the width when the sidebar is open */
+}
 
-    .sidebar-container {
-      position: relative; /* Needed for positioning the button */
-    }
-    .sidebar {
-      position: fixed;
-      height: 100%;
-      width: 30px;
-      overflow: hidden;
-      transition: 0.3s;
-      z-index: 1;
-      background-color: #111;
-      color: #fff;
-      padding: 60px 10px 20px;
-    }
-    .sidebar a {
-      color: #fff;
-      text-decoration: none;
-    }
-    .sidebar-toggle {
-      height: 40px;
-      width: 40px;
-      position: absolute;
-      top: 25px; /* Position the button vertically at the center */
-      right: 5px; /* Position the button to the right of the sidebar container */
-      transform: translateY(-50%); /* Adjust the vertical position to center the button */
+.sidebar-toggle {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 25px;
+  right: 5px;
+  transform: translateY(-50%);
+}
 
+.main-content {
+  transition: 0.3s;
+  padding: 20px;
+  margin-left: 30px; /* This should be the same as the sidebar's closed width */
+}
 
-    }
-    .main-content {
-      transition: 0.3s;
-      padding: 20px;
-    }
+.main-content.active {
+  margin-left: 250px; /* This should be the same as the sidebar's open width */
+}
