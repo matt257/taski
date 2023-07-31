@@ -1,5 +1,16 @@
+<!DOCTYPE html>
 <html>
+<head>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'sidebar', "data-turbo-track": "reload" %>
+</head>
 <body>
+  <div id="mainContent" class="main-content">
+
     <h1>yuh tubes empty</h1>
+  </div>
 </body>
 </html>
