@@ -7,6 +7,11 @@ ruby "3.2.2"
 gem 'nokogiri'
 gem 'rack', '~> 2.2.4'
 
+
+# Bootstrap 
+gem 'bootstrap', '~> 5.0'
+
+
 # Solargraph
 gem 'solargraph'
 
