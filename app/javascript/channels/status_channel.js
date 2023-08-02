@@ -1,6 +1,6 @@
 import consumer from "channels/consumer"
 
-consumer.subscriptions.create("StatusChannel", {
+let channel = consumer.subscriptions.create("StatusChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
   },
@@ -10,6 +10,18 @@ consumer.subscriptions.create("StatusChannel", {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
+    console.log(data.message);
+  },
+
+  speak(message) {
+    this.perform('speak', { message: message });
   }
+});
+
+document.getElementById('new_message').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const messageInput = document.getElementById('message_content');
+  const message = messageInput.value;
+  channel.speak(message);
+  messageInput.value = '';
 });

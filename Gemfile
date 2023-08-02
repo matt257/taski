@@ -11,6 +11,8 @@ gem 'rack', '~> 2.2.4'
 # Bootstrap 
 gem 'bootstrap', '~> 5.0'
 
+# Redis, for Action Cable
+gem 'redis', '~> 4.0'
 
 # Solargraph
 gem 'solargraph'
