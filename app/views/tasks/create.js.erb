@@ -1,0 +1,5 @@
+let taskList = document.getElementById("task-list");
+let newTask = document.createElement("li");
+newTask.innerText = "<%= j @task.name %>";
+taskList.appendChild(newTask);
+

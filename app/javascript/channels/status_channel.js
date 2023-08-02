@@ -9,8 +9,12 @@ let channel = consumer.subscriptions.create("StatusChannel", {
     // Called when the subscription has been terminated by the server
   },
 
-  received(data) {
-    console.log(data.message);
+  received(data) { 
+    console.log(data.message); 
+    const logElement = document.querySelector("#status-log");
+    const newMessage = document.createElement("p");
+    newMessage.innerText = data.message;
+    logElement.appendChild(newMessage);
   },
 
   speak(message) {
