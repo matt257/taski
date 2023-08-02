@@ -31,7 +31,7 @@
               <%= f.submit 'Logout', class: 'btn btn-danger' %>
           </div>
         <% end %>
-          <%= link_to 'Tasks', task_index_path, class: 'btn btn-success' %>
+          <%= link_to 'Tasks', tasks_path, class: 'btn btn-success' %>
         <% else %>
           <%= link_to 'Login!', new_user_session_path, class: 'btn btn-success', id: 'login-button' %>
           <%= link_to 'Signup!', new_user_registration_path, class: 'btn btn-success', id: 'logout-button' %>

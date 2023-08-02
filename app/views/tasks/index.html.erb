@@ -1,11 +1,43 @@
+<!DOCTYPE html>
 <html>
+<head>
+  <title>My Awesome Website</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'sidebar', "data-turbo-track": "reload" %>
+</head>
 <body>
 <div id="mainContent" class="main-content">
 
-    <h1>see all tasks see all</h1>
-    <p>probably generate a bunch of default ones</p>
+  <% if !user_signed_in? %>
+    <h1>this is the homepage</h1>
+  <% else %>
+<h1>Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Priority</th>
+      <th>Tube Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.description %></td>
+        <td><%= task.priority %></td>
+        <td><%= task.tube_number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>    
+
+  <% end %>
 </div>
-
-
 </body>
 </html>
