@@ -10,7 +10,27 @@
 <body>
   <div id="mainContent" class="main-content">
 
-    <h1>yuh tubes empty</h1>
+<h1>Tubes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tubes.each do |task| %>
+      <tr>
+        <td><%= tube.name %></td>
+        <td><%= tube.description %></td>
+        <td><%= tube.priority %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>  
+
   </div>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<html>
+<body>
+<div id="mainContent" class="main-content">
+
+<h1>new tube form</h1>
+
+<%= form_with model: @tube, local: true do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :priority %><br>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>
+
+<ul id="tube-list">
+  <% @tubes&.each do |task| %>
+    <li><%= tube.name %></li>
+  <% end %>
+</ul>
+
+</body>
+</html>

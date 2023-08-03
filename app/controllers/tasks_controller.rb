@@ -3,23 +3,39 @@ class TasksController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @tasks = current_user.tasks
+    if user_signed_in?
+      @tasks = current_user.tasks
+    else
+      @tasks = Task.new
+    end
   end
 
   def show
-    @task = current_user.tasks.find(params[:id])
+    if user_signed_in?
+      @task = current_user.tasks.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def new
-    @task = current_user.tasks.new
+    if user_signed_in?
+      @task = current_user.tasks.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
-    @task = current_user.tasks.new(task_params)
-    if @task.save
-      redirect_to @task, notice: 'Task was successfully created.'
+    if user_signed_in?
+      @task = current_user.tasks.new(task_params)
+      if @task.save
+        redirect_to @task, notice: 'Task was successfully created.'
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to root_path
     end
   end
 
